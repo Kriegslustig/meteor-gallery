@@ -1,10 +1,7 @@
 <template name="layoutBase">
-  <head>
-    <title>Meteor Gallery</title>
-  </head>
   <body>
-    <header>
-      <h1>Meteor Gallery</h1>
+    <header class="mainHeader">
+      <a href="{{ pathFor 'gallery' }}" class="galleryLink"><h1 class="galleryLink__text">Meteor Gallery</h1></a>
     </header>
     <main class="mainContent">
       {{ > yield }}
