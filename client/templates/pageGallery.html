@@ -1,7 +1,8 @@
 <template name="pageGallery">
   {{ #each listImages }}
     <a class="image" href="">
-      <img class="image__img" src="data:image/{{ imageType }};base64,{{ image }}">
+      <h2 class="image__title">{{ title }}</h2>
+      <img class="image__img" src="data:image/{{ imageType }};base64,{{ image }}" alt="{{ description }}">
     </a>
   {{ /each }}
 </template>
