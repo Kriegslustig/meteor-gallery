@@ -5,6 +5,7 @@
  *   title {string}
  *   description {string} {optional}
  *   image {image/base64}
+ *   imageType {string}
  *   createdAt {timestamp}
  * }
  */
