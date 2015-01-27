@@ -1,4 +1,7 @@
 .image {
+  display: block;
+  overflow: hidden;
+  float: left;
   width: 30vw;
   height: 30vw;
 }
