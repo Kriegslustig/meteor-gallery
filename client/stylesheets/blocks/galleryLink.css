@@ -1,0 +1,14 @@
+.galleryLink {
+  display: block;
+  padding: 1rem;
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 10%);
+  text-decoration: none;
+  transition: color .8s;
+  transition-property: background-color;
+}
+
+.galleryLink:hover {
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 90%);
+}

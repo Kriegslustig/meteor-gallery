@@ -1,9 +1,13 @@
 <template name="pageGallery">
   <h2 class="mainContent__title">Gallery</h2>
-  {{ #each listImages }}
-    <a class="image" href="{{ pathFor 'imageDetail' }}">
-      <h3 class="image__title">{{ title }}</h3>
-      <img class="image__img" src="data:image/{{ imageType }};base64,{{ image }}" alt="{{ description }}">
-    </a>
-  {{ /each }}
+  <ul class="gallery">
+    {{ #each listImages }}
+      <li class="gallery__image">
+        <a class="image" href="{{ pathFor 'imageDetail' }}">
+          <h3 class="image__title">{{ title }}</h3>
+          <img class="image__img" src="data:image/{{ imageType }};base64,{{ image }}" alt="{{ description }}">
+        </a>
+      </li>
+    {{ /each }}
+  </ul>
 </template>
