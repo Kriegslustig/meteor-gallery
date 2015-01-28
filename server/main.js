@@ -3,21 +3,13 @@ makeThumbNail = function (fileBuffer, extenstion, callback) {
 , newImage = {
     side: 400
   }
-, syncSize = function (gmRessource, callback) {
+
+  function syncSize (gmRessource, callback) {
     gmRessource.size(callback)
   }
-, imageSize = Meteor.wrapAsync(syncSize)(gmImageRessource)
-, imageRatio = {
-    width: imageSize.width / imageSize.height
-  , height: imageSize.height / imageSize.width
-  }
-  newImage.size = {
-    height: Math.round(newImage.side / imageRatio.height)
-  , width: Math.round(newImage.side / imageRatio.width)
-  }
-  console.log(imageSize)
+  var imageSize = Meteor.wrapAsync(syncSize)(gmImageRessource)
 
-  newGmImageRessource = gmImageRessource.resize(newImage.size.width, newImage.size.height)
+  newGmImageRessource = gmImageRessource.resize(400, 400)
 
   function syncToBuffer (gmRessource, callback) {
     gmRessource.toBuffer(callback)
