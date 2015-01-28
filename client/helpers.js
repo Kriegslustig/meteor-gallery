@@ -1,4 +1,4 @@
-Template.pageGallery.helpers({
+Template.blockGallery.helpers({
   listImages: function () {
     return Images.find({})
   }

@@ -1,0 +1,12 @@
+<template name="blockGallery">
+  <ul class="gallery">
+    {{ #each listImages }}
+      <li class="gallery__image">
+        <a class="image" href="{{ pathFor 'imageDetail' }}">
+          <h3 class="image__title">{{ title }}</h3>
+          <img class="image__img" src="data:image/{{ image.type }};base64,{{ image.thumbNail }}" alt="{{ description }}">
+        </a>
+      </li>
+    {{ /each }}
+  </ul>
+</template>
