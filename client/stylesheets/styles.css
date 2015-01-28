@@ -1,5 +1,5 @@
 html {
-  font-size: 18px;
+  font-size: 14px;
   font-family: Input, monospace;
 }
 
@@ -12,8 +12,28 @@ h1 {
   line-height: 4rem;
 }
 
-h2,
-h3 {
+h2 {
   font-size: 2rem;
   line-height: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+p {
+  line-height: 2em;
+}
+
+@media all AND (min-width: 430px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media all AND (min-width: 500px) {
+  html {
+    font-size: 18px;
+  }
 }
