@@ -12,11 +12,9 @@ insertImage = function (base64FullImage) {
         title: 'Shot from cam'
       , description: 'Shot from cam'
       , createdAt: new Date()
-      , image: {
-          file: imageBuffer.toString('base64')
-        , thumbNail: smallImageBuffer.toString('base64')
-        , type: base64FullImage.type
-        }
+      , imageFile: imageBuffer.toString('base64')
+      , imageThumbNail: smallImageBuffer.toString('base64')
+      , imageType: base64FullImage.type
       })
     }
   })

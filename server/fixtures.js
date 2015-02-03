@@ -9,11 +9,9 @@ if(Images.find({}).count() <= 0) {
             title: 'A First Image'
           , description: 'adjisgioreweoiceiwmciew'
           , createdAt: new Date()
-          , image: {
-              file: imageBuffer.toString('base64')
-            , thumbNail: smallImageBuffer.toString('base64')
-            , type: 'png'
-            }
+          , imageFile: imageBuffer.toString('base64')
+          , imageThumbNail: smallImageBuffer.toString('base64')
+          , imageType: 'png'
           })
         }
       })
@@ -31,11 +29,9 @@ if(Images.find({}).count() <= 0) {
             title: 'Danger ! Danger !'
           , description: 'Something else'
           , createdAt: new Date()
-          , image: {
-              file: imageBuffer.toString('base64')
-            , thumbNail: smallImageBuffer.toString('base64')
-            , type: 'png'
-            }
+          , imageFile: imageBuffer.toString('base64')
+          , imageThumbNail: smallImageBuffer.toString('base64')
+          , imageType: 'png'
           })
         }
       })
@@ -53,11 +49,9 @@ if(Images.find({}).count() <= 0) {
             title: 'Kannste machen'
           , description: 'Das kannste schon so machen, aber dann isses halt kacke'
           , createdAt: new Date()
-          , image: {
-              file: imageBuffer.toString('base64')
-            , thumbNail: smallImageBuffer.toString('base64')
-            , type: 'png'
-            }
+          , imageFile: imageBuffer.toString('base64')
+          , imageThumbNail: smallImageBuffer.toString('base64')
+          , imageType: 'png'
           })
         }
       })
@@ -75,11 +69,9 @@ if(Images.find({}).count() <= 0) {
             title: 'Me'
           , description: 'Ugly motherfucker'
           , createdAt: new Date()
-          , image: {
-              file: imageBuffer.toString('base64')
-            , thumbNail: smallImageBuffer.toString('base64')
-            , type: 'png'
-            }
+          , imageFile: imageBuffer.toString('base64')
+          , imageThumbNail: smallImageBuffer.toString('base64')
+          , imageType: 'png'
           })
         }
       })
