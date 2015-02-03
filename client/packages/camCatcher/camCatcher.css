@@ -1,7 +1,9 @@
 .camCatcher {
   position: relative;
+  overflow: hidden;
   width: 100vw;
   height: 80vw;
+  margin-top: 1rem;
   margin-left: -1rem;
   margin-bottom: 2rem;
 }
@@ -9,16 +11,30 @@
 .camCatcher__video {
   position: absolute;
   display: block;
-  left: 0;
-  top: 0;
   min-width: 100%;
   min-height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #000000;
 }
 
 .camCatcher__trigger {
+  opacity: .6;
+  display: block;
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  width: 8rem;
-  height: 2rem;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  background-image: url('img/Camera_Slr.svg');
+  background-size: 5rem 5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+
+.camCatcher__trigger:active {
+  background: none;
 }
