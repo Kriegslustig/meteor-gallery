@@ -1,6 +1,8 @@
 .meteor/local
 .meteor/meteorite
 
+mup.json
+
 .DS_Store
 
 # Logs
