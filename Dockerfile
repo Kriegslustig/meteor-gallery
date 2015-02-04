@@ -1,14 +1,21 @@
 ############################################################
 # https://github.com/Kriegslustig/Docker-Meteorbase
-# Dockerfile to build a Meteor app container
-# Based on gliderlabs/alpine
+# Dockerfile to build a Meteor app that is bundled using mup container with an internat DB
+# Based on centos:centos6
 ############################################################
-FROM gliderlabs/alpine
+
+FROM centos:centos6
 MAINTAINER Kriegslustig
-RUN apk-install nodejs
-RUN apk-install curl
-RUN curl https://install.meteor.com/ | sh
-EXPOSE 7923
+
+RUN yum install -y epel-release
+RUN yum install -y npm
+
+RUN npm install -g mup
+
+EXPOSE 8080
+
 ADD . /var/app
+RUN mup setup
 WORKDIR /var/app
-CMD meteor -p 7923 --production
+
+CMD mup deploy
