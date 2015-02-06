@@ -1,21 +1,23 @@
 ############################################################
 # https://github.com/Kriegslustig/Docker-Meteorbase
-# Dockerfile to build a Meteor app that is bundled using mup container with an internat DB
-# Based on centos:centos6
+#
+# Based on centos:7
 ############################################################
 
-FROM centos:centos6
+FROM centos:7
 MAINTAINER Kriegslustig
 
 RUN yum install -y epel-release
 RUN yum install -y npm
 
-RUN npm install -g mup
-
-EXPOSE 8080
-
 ADD . /var/app
-RUN mup setup
 WORKDIR /var/app
 
-CMD mup deploy
+VAR ROOT_URL='http://gallery.kriegslustig.me'
+VAR PORT=80
+
+RUN npm install
+
+EXPOSE 80
+
+CMD MONGO_URL="mongodb://${MONGO_PORT_27017_TCP_ADDR}:${MONGO_PORT_27017_TCP_PORT}${MONGO_NAME}"; node main.js
