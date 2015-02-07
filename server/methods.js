@@ -5,17 +5,22 @@ Meteor.methods({
 })
 
 insertImage = function (base64FullImage) {
-  var imageBuffer = new Buffer(base64FullImage.base64, 'base64')
-  makeThumbNail(imageBuffer, 'png', function(err, smallImageBuffer) {
-    if(!err) {
-      Images.insert({
-        title: 'Shot from cam'
-      , description: 'Shot from cam'
-      , createdAt: new Date()
-      , imageFile: imageBuffer.toString('base64')
-      , imageThumbNail: smallImageBuffer.toString('base64')
-      , imageType: base64FullImage.type
-      })
-    }
-  })
+  var currentTime = new Date()
+, imageTitle = currentTime.getUTCHours() + ':' + currentTime.getUTCMinutes() + ':' + currentTime.getUTCSeconds() + ', ' + currentTime.getUTCDay() + '.' + currentTime.getUTCMonth() + ' ' + currentTime.getUTCFullYear()
+  if(Images.find({title: imageTitle}).count() < 1) {
+    var imageBuffer = new Buffer(base64FullImage.base64, 'base64')
+    makeThumbNail(imageBuffer, 'png', function(err, smallImageBuffer) {
+      if(!err) {
+        Images.insert({
+          title: imageTitle
+        , description: 'Shot from cam'
+        , createdAt: currentTime.getSeconds()
+        , imageFile: imageBuffer.toString('base64')
+        , imageThumbNail: smallImageBuffer.toString('base64')
+        , imageType: base64FullImage.type
+        })
+      }
+    })
+  }
+  return true
 }
