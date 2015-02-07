@@ -1,0 +1,21 @@
+.notification {
+  position: fixed;
+  display: block;
+  padding: .5rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: hsl(0, 100% 50%);
+}
+
+.notification--warning {
+  background-color: hsl(50, 50%, 50%);
+}
+
+.notification--error {
+  background-color: hsl(30, 50%, 50%);
+}
+
+.notification__text {
+  line-height: 2rem;
+}
