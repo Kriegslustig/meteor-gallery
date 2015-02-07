@@ -1,11 +1,13 @@
 .notification {
   position: fixed;
   display: block;
+  opacity: 0;
   padding: .5rem;
   top: 0;
   left: 0;
   right: 0;
   background-color: hsl(0, 0%, 70%);
+  transition: opacity .2s;
 }
 
 .notification--warning {
@@ -15,6 +17,10 @@
 .notification--error {
   background-color: hsl(0, 50%, 50%);
   color: hsl(0, 0%, 95%);
+}
+
+.notification--remove {
+  opacity: 0;
 }
 
 .notification__text {
