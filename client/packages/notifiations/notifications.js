@@ -1,4 +1,4 @@
-var notification = {
+notification = {
   text: 'Notification'
 , type: 'message' // error || warning || message
 , show: function () {
@@ -7,6 +7,6 @@ var notification = {
       text: self.text
     , type: self.type
     }
-    Blaze.renderWithData('notification', data, document.body)
+    Blaze.renderWithData(Template.notification, data, document.body)
   }
 }
