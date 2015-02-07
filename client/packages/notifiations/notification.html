@@ -1,5 +1,6 @@
 <template name="notification">
   <aside class="notification notification--{{ type }}">
     <p class="notification__text">{{ text }}</p>
+    <a class="notification__close" href="javascript:void(0)" onclick="javascript:var closeEvent = new CustomEvent('close'); this.parentNode.dispatchEvent(closeEvent)">&times;</a>
   </aside>
 </template>

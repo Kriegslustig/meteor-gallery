@@ -26,3 +26,11 @@
 .notification__text {
   line-height: 2rem;
 }
+
+.notification__close {
+  position: absolute;
+  text-decoration: none;
+  color: inherit;
+  right: 1rem;
+  top: 1rem;
+}
