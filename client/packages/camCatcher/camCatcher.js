@@ -1,15 +1,18 @@
 camCatcher = {
   init: function (videoElem) {
-    camCatcher.vidoElem = videoElem
+    var self = this
+    self.vidoElem = videoElem
     navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia ||navigator.mozGetUserMedia || navigator.msGetUserMedia)
     if(navigator.getUserMedia) {
       navigator.getUserMedia({
         video: true
-      , audio: true
+      , audio: false
       }
     , function (localMediaStream) {
-        camCatcher.vidoElem.src = URL.createObjectURL(localMediaStream)
-        camCatcher.vidoElem.play()
+        if(localMediaStream) {
+          self.vidoElem.src = URL.createObjectURL(localMediaStream)
+          self.vidoElem.play()
+        }
       }
     , function (err) {
         console.log(err)
@@ -17,11 +20,14 @@ camCatcher = {
     }
   }
 , catchFrame: function () {
-     var self = this
-   , shotImage = self.captureBase64FromFromVideoElem(camCatcher.vidoElem, 400, 400)
-  , shotImageSplit = shotImage.split(';')
-  , shotImageType = shotImageSplit[0].split('image/')[1]
-  , shotImageBase64 = shotImageSplit[1].split('base64,')[1]
+    var self = this
+    if(!self.vidoElem.src) return false
+    var shotImage = self.captureBase64FromFromVideoElem(self.vidoElem, 400, 400)
+  , shotImageSplit, shotImageType, shotImageBase64
+
+    shotImageSplit = shotImage.split(';')
+    shotImageType = shotImageSplit[0].split('image/')[1]
+    shotImageBase64 = shotImageSplit[1].split('base64,')[1]
     return {
       base64: shotImageBase64
     , type: shotImageType

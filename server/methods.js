@@ -1,6 +1,6 @@
 Meteor.methods({
   insertImage: function (base64FullImage) {
-    insertImage(base64FullImage)
+    return insertImage(base64FullImage)
   }
 })
 
@@ -21,6 +21,8 @@ insertImage = function (base64FullImage) {
         })
       }
     })
+  } else {
+    return false
   }
   return true
 }
