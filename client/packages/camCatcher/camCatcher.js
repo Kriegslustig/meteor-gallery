@@ -17,6 +17,18 @@ camCatcher = {
     , function (err) {
         console.log(err)
       })
+      setTimeout(function () {
+        if(self.vidoElem.src) return true
+        var failMessage = Object.create(notification)
+        failMessage.type = 'warning'
+        failMessage.text = 'You have to allow camera access to be able to upload images'
+        failMessage.show()
+      }, 3000)
+    } else {
+      var failMessage = Object.create(notification)
+      failMessage.type = 'warning'
+      failMessage.text = 'No camera found'
+      failMessage.show()
     }
   }
 , catchFrame: function () {
