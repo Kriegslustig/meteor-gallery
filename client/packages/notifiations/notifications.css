@@ -12,6 +12,7 @@
 
 .notification--warning {
   background-color: hsl(30, 50%, 50%);
+  color: hsl(0, 0%, 95%);
 }
 
 .notification--error {
